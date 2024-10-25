@@ -68,7 +68,7 @@ routes.get('/:TasteType',async(req,res)=>{
     }
 })
 
-// Update Menus
+// Update Menus items
 
 routes.put('/:id',async(req,res)=>{
     try{

@@ -2,6 +2,10 @@ const express=require('express');
 const app=express();
 const db=require('./db');
 
+// Require Dotenv file
+
+require('dotenv').config();
+
 // Body-Parser is a Middleware which can conver the 
 // form Data to Json data
 
@@ -29,5 +33,6 @@ app.use('/Menus',MenusRoutes);
 
 // Node Port
 
+const Port=process.env.Port || 2500
 app.listen('2500');
 console.log('Lissening port 2500');

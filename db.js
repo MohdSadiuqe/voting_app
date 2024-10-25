@@ -1,9 +1,12 @@
 const mongoose = require('mongoose');
 const express = require('express');
+require('dotenv').config();
 
 // Mongodb Port
 
-const mongoURL = 'mongodb://localhost:27017/unknown';  // Replace 'unknown' with your actual database name
+// const mongoURL = process.env.mongoURL_LOCAL;  
+
+const mongoURL =process.env.mongoURL
 
 mongoose.connect(mongoURL, {
 
