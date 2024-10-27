@@ -1,15 +1,15 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
 const express = require('express');
-require('dotenv').config();
 
-// Mongodb Port
+const app = express();
 
-// const mongoURL = process.env.mongoURL_LOCAL;  
-
+// const mongoURL = process.env.MONGO_URL_LOCAL;
 const mongoURL =process.env.mongoURL
 
 mongoose.connect(mongoURL, {
-
+    // useNewUrlParser: true,
+    // useUnifiedTopology: true,
 });
 
 const db = mongoose.connection;
@@ -19,12 +19,9 @@ db.on('connected', () => {
 });
 
 db.on('disconnected', () => {
-    console.log('MongoDB server disconnected successfully');
+    console.log('MongoDB server disconnected');
 });
 
-// Pass the actual error message
 db.on('error', (error) => {
     console.error('MongoDB connection error:', error);
 });
-
-module.exports = db;
