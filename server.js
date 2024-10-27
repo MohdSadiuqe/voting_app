@@ -33,7 +33,7 @@ app.use('/Menus',MenusRoutes);
 
 // Node Port
 
-const Port=process.env.Port
+const Port=process.env.Port || 2500
 app.listen(Port, () => {
     console.log(`Listening on port ${Port}`);
 });
